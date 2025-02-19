@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Comparison</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Compare Countries</h1>
+        <form method="post">
+            <label for="country1">Country 1:</label>
+            <select id="country1" name="country1">
+                {% for country in gdf['ADMIN'].unique() %}
+                    <option value="{{ country }}">{{ country }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="country2">Country 2:</label>
+            <select id="country2" name="country2">
+                {% for country in gdf['ADMIN'].unique() %}
+                    <option value="{{ country }}">{{ country }}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <label for="rotation">Rotation:</label>
+            <input type="number" id="rotation" name="rotation" value="0">
+            <br>
+            <label for="crs1">CRS for Country 1:</label>
+            <input type="text" id="crs1" name="crs1" value="EPSG:3857">
+            <br>
+            <label for="crs2">CRS for Country 2:</label>
+            <input type="text" id="crs2" name="crs2" value="EPSG:3857">
+            <br>
+            <button type="submit">Compare</button>
+        </form>
+    </div>
+    <div class="links">
+        Useful links:<br>
+        <a href = https://map-projections.net/singleview.php>Projeções</a><br>
+        <a href = https://epsg.io>Consulta de EPSG por País</a>
+    </div>
+</body>
+</html>

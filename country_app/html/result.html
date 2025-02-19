@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="result-container">
+        <h1>Comparison Result</h1>
+        <img src="data:image/png;base64,{{ image }}" alt="Country Comparison">
+        <br>
+        <h4>Country 1: {{ country1 }}</h4>
+        <h4>Country 2: {{ country2 }}</h4>
+
+        <a href="/">Compare Again</a>
+    </div>
+</body>
+</html>

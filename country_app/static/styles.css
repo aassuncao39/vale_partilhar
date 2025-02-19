@@ -1,0 +1,136 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(-45deg, #f4f4f9, #e0e0f0, #f4f4f9);
+    background-size: 125% 125%;
+    background-image: url("/static/images/background.jpg");
+    animation: gradientBG 10s ease infinite;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 2rem; /* Adds space around the text */
+    border-radius: 10px; /* Rounds the corners */
+    display: inline-block; /* Ensures background only wraps the text */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+}
+
+
+/* Form Styles */
+form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #34495e;
+}
+
+select, input[type="number"], input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Result Page Styles */
+.result-container {
+    text-align: center;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+}
+
+.result-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.result-container a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #2ecc71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.result-container a:hover {
+    background-color: #27ae60;
+}
+
+.links {
+    color: blue;
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    form, .result-container {
+        padding: 1rem;
+    }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
