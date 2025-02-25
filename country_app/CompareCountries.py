@@ -64,7 +64,7 @@ class CompareCountries:
         plt.yticks([])
 
         # Add a title:
-        plt.title(f"{self.country2} vs. {self.country1} Size Comparison")
+        plt.title(f"Comparação {self.country2} vs. {self.country1}")
 
         # Save plot (optional):
         #plt.savefig(f'{COUNTRY2} vs {COUNTRY1}.png', dpi=600)
@@ -74,9 +74,11 @@ class CompareCountries:
         return fig
     
     def calculate_area(self, front, back):
-        front['area_km2'] = front.area / 10**6
-        back['area_km2'] = back.area / 10**6
-        area1_front = f"{self.country2} area = {front.area_km2.to_string(index=False)} sq km"
-        area2_back = f"{self.country1} area = {back.area_km2.to_string(index=False)} sq km"
+        front['area_km2'] = (front.area / 10**6).round(6)
+        back['area_km2'] = (back.area / 10**6).round(6)
+
+        # Force fixed-point notation
+        area1_front = f"Área do {self.country2} = {front.area_km2.apply(lambda x: f'{x:,.2f}').to_string(index=False)} km²"
+        area2_back = f"Área do {self.country1} = {back.area_km2.apply(lambda x: f'{x:,.2f}').to_string(index=False)} km²"
 
         return area1_front, area2_back
