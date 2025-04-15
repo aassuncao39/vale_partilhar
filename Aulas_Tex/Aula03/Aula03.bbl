@@ -1,0 +1,41 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[C{\^a}mara, Davis e Monteiro 2001]{camara2001introduccao}
+\abntrefinfo{C{\^a}mara, Davis e Monteiro}{C{\^A}MARA; DAVIS; MONTEIRO}{2001}
+{C{\^A}MARA, G.; DAVIS, C.; MONTEIRO, A. M.~V. Introdu{\c{c}}{\~a}o {\`a}
+  ci{\^e}ncia da geoinforma{\c{c}}{\~a}o.
+2001.}
+
+\bibitem[C{\^a}mara e Medeiros 1996]{camara1996geoprocessamento}
+\abntrefinfo{C{\^a}mara e Medeiros}{C{\^A}MARA; MEDEIROS}{1996}
+{C{\^A}MARA, G.; MEDEIROS, J.~d. \emph{Geoprocessamento para projetos
+  ambientais}. [S.l.]: INPE S{\~a}o Jos{\'e} dos Campos, 1996.}
+
+\bibitem[Fitz 2008]{fitz2008cartografia}
+\abntrefinfo{Fitz}{FITZ}{2008}
+{FITZ, P.~R. \emph{Cartografia b{\'a}sica}. [S.l.]: Oficina de Textos, 2008.}
+
+\bibitem[Silva 2003]{silva2003sistemas}
+\abntrefinfo{Silva}{SILVA}{2003}
+{SILVA, A. d.~B. Sistemas de informa{\c{c}}{\~o}es geo-referenciadas: conceitos
+  e fundamentos. In:  \emph{Sistemas de informa{\c{c}}{\~o}es
+  geo-referenciadas: conceitos e fundamentos}. [S.l.: s.n.], 2003. p.
+  236--236.}
+
+\bibitem[Thiede et al. 2014]{thiede2014quantum}
+\abntrefinfo{Thiede et al.}{THIEDE et al.}{2014}
+{THIEDE, R. et al. Quantum {GIS} training manual.
+\emph{Quantum Organisation}, 2014.}
+
+\bibitem[TOSTO et al. 2014]{tosto2014geotecnologias}
+\abntrefinfo{TOSTO et al.}{TOSTO et al.}{2014}
+{TOSTO, S.~G. et al. Geotecnologias e geoinforma{\c{c}}{\~a}o: o produtor
+  pergunta, a embrapa responde.
+Bras{\'\i}lia, DF: Embrapa, 2014., 2014.}
+
+\end{thebibliography}
