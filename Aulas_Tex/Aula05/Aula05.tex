@@ -1,0 +1,174 @@
+\documentclass[t,darkblue]{beamer}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage[alf]{abntex2cite}
+\usepackage{tikz}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
+\usepackage{lipsum}
+\usepackage{caption}			% Pacote para retirar o prefixo "Figura"
+\captionsetup[figure]{labelformat=empty}% redefines the caption setup of the figures environment in the beamer class.
+\usepackage{parskip}
+\setlength{\parskip}{\baselineskip} 
+
+\renewcommand{\raggedright}{\leftskip=0pt \rightskip=0pt plus 0cm}
+\newcommand\fontvi{\fontsize{9}{9}\selectfont}
+
+% Definição de estilo
+
+\usetheme{Madrid} 
+%\setbeamertemplate{background}{\tikz[overlay,remember picture]\node[opacity=0.4]at (current page.center){\includegraphics[width=2cm]{Imagens/Logomarca}};} % Marca d'água por trás do texto
+
+% Definição de fonte
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+
+% Definição de cores
+\definecolor{icmcAzulLogo}{RGB}{121,178,242}
+\definecolor{icmcAzulSite}{RGB}{66,135,214}
+\definecolor{icmcAzulBorda}{RGB}{66,135,214}
+
+% Range de cores do template
+\setbeamercolor{structure}{fg=icmcAzulBorda!90!icmcAzulSite}
+
+% Declaração alternativa da palheta de cores do modelo
+%\mode<presentation>
+%{
+%	\usetheme{Madrid}
+%	\setbeamercolor*{palette primary}{use=structure,fg=white,bg=icmcAzulSite}
+%	\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=icmcAzulLogo}
+%	\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=icmcAzulBorda}
+%}
+
+\begin{document}
+	\author[Aula 05]{Operações espaciais, práticas de geoprocessamento}
+	\title[Operações espaciais, práticas de geoprocessamento]{Como dominar o mundo com geoprocessamento}
+	\subtitle{Aula 05}
+	\titlegraphic{\vspace{-1cm}\includegraphics[width=2.0cm]{./image/vale}\hspace*{6.75cm}~%
+		\includegraphics[width=1.5cm]{./image/qgis}\\
+		\includegraphics[width=2.5cm]{./image/tetra}}
+	\institute[]{Alexandre Assunção}
+	\date{15 de junho de 2025}
+	%\subject{}
+	%\setbeamercovered{transparent}
+	\setbeamertemplate{navigation symbols}{}
+	\begin{frame}[plain]
+	\maketitle
+	\end{frame}
+
+% Conteúdo
+\begin{frame}
+\frametitle{Sumário da Aula 05}
+\large
+\begin{itemize}
+	\item Ferramentas vetoriais;
+	\item Ferramentas matriciais;
+	\item
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{QGIS Processing}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/qgis_processing}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Vetorial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/ferramentas_analise_vetorial}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Vetorial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/buffer}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Vetorial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/clip}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Matricial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/ferramentas_analise_matricial}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Matricial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/interpolação}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Matricial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/clip_raster}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Matricial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/contour}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Matricial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/slope}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Matricial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/zonal_statistics}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Matricial}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/analises_matriciais}
+	\end{figure}
+\end{frame}
+
+
+
+
+%\bibliographystyle{plain}   % Alterar o estilo da referência caso necessário
+%\tiny
+\nocite{camara1996geoprocessamento,camara2001introduccao,fitz2008cartografia,silva2003sistemas,thiede2014quantum,tosto2014geotecnologias}
+\bibliography{REF}  
+
+
+\end{document}
