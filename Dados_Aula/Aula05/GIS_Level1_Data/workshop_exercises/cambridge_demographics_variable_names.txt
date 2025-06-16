@@ -1,0 +1,4 @@
+VALUE0	% Housing, Built 1939 or Earlier, 2020
+VALUE1	% Education Attainment, College, Master's or Doctorate Degree, 2020
+VALUE2	Median Household Income, 2020
+VALUE3	% Population, 65 Years and Older, 2020
