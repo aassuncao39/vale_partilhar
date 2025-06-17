@@ -52,7 +52,7 @@
 		\includegraphics[width=1.5cm]{./image/qgis}\\
 		\includegraphics[width=2.5cm]{./image/tetra}}
 	\institute[]{Alexandre Assunção}
-	\date{15 de junho de 2025}
+	\date{17 de junho de 2025}
 	%\subject{}
 	%\setbeamercovered{transparent}
 	\setbeamertemplate{navigation symbols}{}
@@ -67,7 +67,9 @@
 \begin{itemize}
 	\item Ferramentas vetoriais;
 	\item Ferramentas matriciais;
-	\item
+	\item Prática ferramentas;
+	\item Exercício de fixação;
+	\item Prova em grupo;
 \end{itemize}
 \end{frame}
 
@@ -104,6 +106,56 @@
 	\end{figure}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Ferramentas de Análise Vetorial}
+	\begin{table}[h]
+	\centering
+	\scriptsize 
+	\begin{tabular}{|l|p{4cm}|c|}
+		\hline
+		\textbf{Relação Espacial} & \textbf{Descrição} & \textbf{DE-9IM} \\ \hline
+		\textbf{Disjunto (Disjoint)} & Os objetos não se tocam nem se cruzam. & \texttt{FF*FF****} \\ \hline
+		\textbf{Toca (Touches)} & Os objetos encostam apenas na borda (fronteira). & \texttt{FT*******} ou \texttt{F**T*****} \\ \hline
+		\textbf{Sobrepõe (Overlaps)} & Os objetos têm parte em comum, mas nenhum está totalmente dentro do outro. & \texttt{T*T***T**} \\ \hline
+		\textbf{Dentro (Within)} & O primeiro objeto está completamente dentro do segundo. & \texttt{T*F**F***} \\ \hline
+		\textbf{Contém (Contains)} & O primeiro objeto contém totalmente o segundo. & \texttt{T*****FF*} \\ \hline
+		\textbf{Igual (Equals)} & Os dois objetos são exatamente iguais (mesmo tamanho e localização). & \texttt{TFFFTFFFT} \\ \hline
+		\textbf{Interseção (Intersects)} & Qualquer tipo de contato entre os objetos. & Não disjunto \\ \hline
+	\end{tabular}
+	\caption{Relações espaciais básicas representadas com a matriz DE-9IM.}
+	\end{table}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Vetorial}
+	Spatial Join
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\textwidth]{./image/sj_predicates}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Ferramentas de Análise Vetorial}
+	Spatial Join
+	\begin{itemize}
+		\item Intersects?
+		\item Disjunto?
+		\item Sobrepõe?
+		\item Contém?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	Spatial Join
+	\frametitle{Ferramentas de Análise Vetorial}
+	\begin{itemize}
+		\item Intersects? 1, 2, 3
+		\item Disjunto? 4
+		\item Sobrepõe? 2
+		\item Contém? 1
+	\end{itemize}
+\end{frame}
 
 
 \begin{frame}
@@ -163,6 +215,20 @@
 \end{frame}
 
 
+\begin{frame}
+	\frametitle{Exercício de fixação}
+	\begin{itemize}
+		\item Abrir documento word 
+		\texttt{Aula05/Tutorial\_SIG\_QGIS\_Nivel1.docx}
+		\item Realizar a atividade de forma individual e responder as perguntas do word
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Prova em Grupo}
+	Entrar no link: www.kahoot.it
+	Inserir código do jogo: 7218547
+\end{frame}
 
 
 %\bibliographystyle{plain}   % Alterar o estilo da referência caso necessário
