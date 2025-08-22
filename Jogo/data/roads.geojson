@@ -1,0 +1,31 @@
+{
+  "type": "FeatureCollection",
+  "name": "roads",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Main St", "type": "primary" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.9858,-19.9935],
+          [-43.9835,-19.9920],
+          [-43.9815,-19.9910],
+          [-43.9790,-19.9892]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "2nd Ave", "type": "secondary" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.9862,-19.9900],
+          [-43.9825,-19.9902],
+          [-43.9792,-19.9904]
+        ]
+      }
+    }
+  ]
+}

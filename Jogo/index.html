@@ -1,0 +1,112 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GeoQuest: Mapping Our World</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Leaflet core -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Leaflet.draw -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+
+  <!-- Turf (geoprocessing) -->
+  <script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="topbar" role="banner" aria-label="Game HUD">
+    <div id="game-title">🗺️ GeoQuest: Mapping Our World</div>
+    <div id="mission-status">
+      <span id="current-mission">Mission: —</span>
+      <button id="btn-prev-mission" class="ghost" aria-label="Previous mission" title="Previous mission">◀</button>
+      <button id="btn-next-mission" class="ghost" aria-label="Next mission" title="Next mission">▶</button>
+    </div>
+    <div id="score-panel">
+      <span id="score">Score: 0</span>
+      <button id="btn-reset" class="danger" aria-label="Reset game">Reset</button>
+    </div>
+  </div>
+
+  <div id="app">
+    <aside id="sidebar" aria-label="Mission panel and tools">
+      <section>
+        <h2>🎯 Missions</h2>
+        <ol id="mission-list" class="steps"></ol>
+      </section>
+
+      <section>
+        <h2>🛠️ Tools</h2>
+        <div class="tool-group">
+          <button id="btn-select-mode" title="Click to select features">Select</button>
+          <button id="btn-draw-polygon" title="Draw polygon to select">Draw Select</button>
+          <button id="btn-draw-path" title="Draw path for Raster mission">Draw Path</button>
+        </div>
+        <div class="tool-group">
+          <button id="btn-buffer" title="Buffer rivers by 100 m">Buffer 100m Rivers</button>
+          <button id="btn-clip" title="Clip last result to boundary">Clip to Boundary</button>
+          <button id="btn-intersect" title="Intersect result with roads">Intersect Roads</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>🧿 Layers</h2>
+        <div id="layer-toggles" class="toggles">
+          <label><input type="checkbox" data-layer="boundary" checked /> Boundary</label>
+          <label><input type="checkbox" data-layer="rivers" checked /> Rivers</label>
+          <label><input type="checkbox" data-layer="roads" checked /> Roads</label>
+          <label><input type="checkbox" data-layer="poi" checked /> Schools/Clinics</label>
+          <label><input type="checkbox" data-layer="parcels" /> Land Parcels</label>
+          <label><input type="checkbox" data-layer="ndvi" /> NDVI Raster</label>
+          <label><input type="checkbox" data-layer="results" checked /> Results</label>
+        </div>
+      </section>
+
+      <section>
+        <h2>🧭 Legend</h2>
+        <div id="legend"></div>
+      </section>
+
+      <section>
+        <h2>💡 Info</h2>
+        <div id="info" tabindex="0">
+          <p><strong>Vector</strong> = shapes (points/lines/polygons).</p>
+          <p><strong>Raster</strong> = grid (imagery/NDVI/DEM).</p>
+          <p><strong>Buffer</strong> = area around; <strong>Intersect</strong> = overlap; <strong>Clip</strong> = cut to boundary.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>🏅 Progress</h2>
+        <div id="badges"></div>
+      </section>
+    </aside>
+
+    <main id="map-wrapper">
+      <div id="map" role="application" aria-label="Map canvas"></div>
+    </main>
+  </div>
+
+  <div id="modal" class="hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <h3 id="modal-title">Mission Complete!</h3>
+      <p id="modal-body">Great job!</p>
+      <button id="modal-close">Close</button>
+    </div>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha512-vMN4xH6Z1GN9bQxJr3Tq0oV+7l2l3iH2B3h0nC9tJb3F3B8M2l1T9GzA3gJQdHqQ5n0kQXb0wS8p1b9Q2b0n7Q=="
+    crossorigin=""
+  ></script>
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+  <script src="https://unpkg.com/@turf/turf@6.5.0/turf.min.js"></script>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

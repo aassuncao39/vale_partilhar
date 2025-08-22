@@ -1,0 +1,21 @@
+{
+  "type": "FeatureCollection",
+  "name": "points_of_interest",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "id": "sch-1", "type": "school", "name": "Escola Central" },
+      "geometry": { "type": "Point", "coordinates": [-43.9820, -19.9905] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "sch-2", "type": "school", "name": "Colégio Parque" },
+      "geometry": { "type": "Point", "coordinates": [-43.9808, -19.9906] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "cl-1", "type": "clinic", "name": "Posto de Saúde" },
+      "geometry": { "type": "Point", "coordinates": [-43.9830, -19.9911] }
+    }
+  ]
+}

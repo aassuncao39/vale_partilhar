@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample_boundary",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Municipal Boundary" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9865,-19.9940],
+          [-43.9780,-19.9940],
+          [-43.9780,-19.9880],
+          [-43.9865,-19.9880],
+          [-43.9865,-19.9940]
+        ]]
+      }
+    }
+  ]
+}

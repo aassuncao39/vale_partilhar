@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "name": "rivers",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Rio Verde" },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-43.9860,-19.9928],
+          [-43.9838,-19.9917],
+          [-43.9820,-19.9910],
+          [-43.9795,-19.9898]
+        ]
+      }
+    }
+  ]
+}

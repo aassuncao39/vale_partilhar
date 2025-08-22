@@ -1,0 +1,120 @@
+/* style.css */
+:root{
+  --bg:#0e1320;
+  --panel:#12192e;
+  --panel-2:#18223d;
+  --accent:#66e3a4;
+  --accent-2:#98a2ff;
+  --text:#f2f5ff;
+  --muted:#9fb0d7;
+  --danger:#ff6b6b;
+  --shadow:0 6px 16px rgba(0,0,0,0.25);
+}
+*{box-sizing:border-box}
+html,body,#app,#map-wrapper,#map{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial;
+  background:linear-gradient(180deg,#0d1327,#0b1020);
+  color:var(--text);
+}
+#topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:10px 14px;
+  background:rgba(20,28,52,0.9);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #1f2a4d;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+#game-title{font-weight:700; letter-spacing:.2px}
+#mission-status{display:flex;align-items:center;gap:8px}
+#score-panel{display:flex;align-items:center;gap:8px}
+#score{background:var(--panel-2);padding:6px 10px;border-radius:12px}
+
+#app{display:grid;grid-template-columns:320px 1fr; height:calc(100% - 56px)}
+#sidebar{
+  overflow:auto;
+  background:var(--panel);
+  border-right:1px solid #1f2a4d;
+  padding:12px 14px 80px 14px;
+}
+#sidebar h2{
+  margin:16px 0 8px;
+  font-size:16px;
+  color:var(--accent);
+}
+.steps{padding-left:18px}
+.steps li{margin:6px 0}
+.tool-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+button{
+  background:var(--accent-2);
+  color:#0c0f1c;
+  border:none;
+  border-radius:12px;
+  padding:8px 10px;
+  font-weight:700;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+}
+button.ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid #2a3761;
+  box-shadow:none;
+}
+button.danger{background:var(--danger); color:#1c0d0d}
+button:focus{outline:2px solid var(--accent); outline-offset:2px}
+
+.toggles label{display:flex;gap:8px;align-items:center;margin:4px 0}
+#legend{
+  display:grid; gap:10px;
+  background:var(--panel-2);
+  border-radius:12px; padding:10px;
+  border:1px solid #22305a;
+}
+.legend-row{display:flex;align-items:center;gap:8px}
+.legend-swatch{
+  width:18px;height:18px;border-radius:4px;border:2px solid rgba(0,0,0,0.25)
+}
+.legend-line{
+  width:26px;height:0;border-top:4px solid; border-radius:2px
+}
+.legend-point{
+  width:12px;height:12px;border-radius:50%; border:2px solid #000
+}
+
+#info{
+  background:var(--panel-2);
+  border:1px solid #22305a;
+  padding:10px;border-radius:12px;
+  min-height:80px;
+}
+#badges{display:flex;flex-wrap:wrap;gap:8px}
+.badge{background:#1d2b52;border:1px solid #28407a;padding:4px 8px;border-radius:999px}
+
+#map{height:100%; width:100%}
+
+#modal.hidden{display:none}
+#modal{
+  position:fixed; inset:0; display:grid; place-items:center;
+  background:rgba(0,0,0,.5);
+}
+.modal-card{
+  background:var(--panel);
+  border:1px solid #2a3761;
+  width:min(480px,92vw);
+  padding:18px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+}
+
+@media (max-width: 900px){
+  #app{grid-template-columns:1fr}
+  #sidebar{grid-row:2}
+  #map-wrapper{grid-row:1; height:42vh}
+}

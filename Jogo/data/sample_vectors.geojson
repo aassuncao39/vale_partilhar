@@ -1,0 +1,48 @@
+{
+  "type": "FeatureCollection",
+  "name": "sample_vectors",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "id": "parcel-1", "layer": "parcels", "owner": "Lot A" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9822,-19.9908],
+          [-43.9816,-19.9908],
+          [-43.9816,-19.9902],
+          [-43.9822,-19.9902],
+          [-43.9822,-19.9908]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "parcel-2", "layer": "parcels", "owner": "Lot B" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9815,-19.9909],
+          [-43.9809,-19.9909],
+          [-43.9809,-19.9903],
+          [-43.9815,-19.9903],
+          [-43.9815,-19.9909]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "id": "low-ndvi-1", "layer": "low_ndvi", "note": "Shaded area used to validate low NDVI avoidance" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-43.9832,-19.9914],
+          [-43.9823,-19.9914],
+          [-43.9823,-19.9906],
+          [-43.9832,-19.9906],
+          [-43.9832,-19.9914]
+        ]]
+      }
+    }
+  ]
+}
