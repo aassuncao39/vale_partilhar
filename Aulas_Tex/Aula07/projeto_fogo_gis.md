@@ -36,7 +36,7 @@ Vocês são uma equipe responsável por elaborar um **Plano de Prevenção e Com
 
 #### 📌 Condições Gerais
 - Os pontos devem estar **dentro do limite do parque**
-- Distância mínima entre pontos: **500m**
+- Distância mínima entre pontos: **2500m**
 - Devem estar sobre a **hidrografia**
 - Distância máxima de **300m** de uma via de acesso (camada `malha viária`)
 - Devem estar em hidrografia de ordem superior a 2 (`nustrahler`)
@@ -49,7 +49,7 @@ Vocês são uma equipe responsável por elaborar um **Plano de Prevenção e Com
 
 #### 📌 Condições Gerais
 - Devem estar **dentro do limite do parque**
-- Distância mínima entre torres: **500m**
+- Distância mínima entre torres: **1000m**
 - Altitude superior a **1200m**
 - Distância máxima de **100m** de uma via de acesso
 
