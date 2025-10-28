@@ -99,21 +99,26 @@ Criar um layout de impressão no QGIS nomeado **Plano de Prevenção de Incêndi
 
 
 ## 🧩 Desafio Final (Extra) - (20 pontos)
-### 🌐 Publicação Dinâmica no Felt WebGIS
+### 🌐 Publicação Dinâmica por meio do Plugin qgis2web
 
-Como etapa complementar e opcional, desafia-se a equipe a transformar o mapa estático em uma **visualização interativa** utilizando a plataforma [FELT](https://felt.com/):
+Como etapa complementar e opcional, desafia-se a equipe a transformar o mapa estático em uma **visualização interativa** utilizando o plugin [qgis2web](https://plugins.qgis.org/plugins/qgis2web/):
 
 - 🗺️ **Objetivo:** Publicar o plano de prevenção e combate a incêndios em formato dinâmico, acessível via web.
 - 🔧 **Como fazer:**
-  - Exportar as camadas do QGIS em formato compatível (.geojson, .shp, .kml, etc.)
-  - Criar um projeto no FELT e importar as camadas
-  - Organizar a visualização com legendas, cores e descrições
-  - Compartilhar o link do mapa interativo com a turma/instrutor
+  - Instalar o complemento (plugin) [qgis2web]
+  - Clicar no ícone do [qgis2web] para exportar o projeto do QGIS para web
+  - Configurar as camadas a serem apresentadas na aba [Layers and Groups]
+  - Alterar propriedades na aba Appearance. 
+      - *ATENÇÃO: configurar Layers list para Collapsed*
+      - *ATENÇÃO: ativar Geolocate user*
+      - *ATENÇÃO: colocar Metric na Measure tool*
+
 - 🏆 **Benefício:** Aprimorar a comunicação dos resultados e explorar o potencial de plataformas WebGIS para projetos reais
 
 ---
 
 ## 📦 Entrega Final
+- **Arquivos editaveis** Arquivos utilizados para gerar os produtos (pasta zipada com todo conteúdo)
 - **Apresentação:** Apresentação para os colegas os resultados obtidos
-- **Produto esperado:** 1 layout em A4 impresso/exportado em PDF ou imagem
-- **Complemento:** Texto (5–10 linhas) justificando as escolhas feitas
+- **Mapa:** 1 layout em A4 impresso/exportado em PDF ou imagem
+- **Relatório:** Texto (5–10 linhas) justificando as escolhas feitas

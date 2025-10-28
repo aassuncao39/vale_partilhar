@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>projeto_fogo_gis.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%F0%9F%94%A5-o-projeto">🔥 O Projeto</h1>
+<h2 id="%F0%9F%93%98-introdu%C3%A7%C3%A3o">📘 Introdução</h2>
+<p>Vocês são uma equipe responsável por elaborar um <strong>Plano de Prevenção e Combate a Incêndios Florestais</strong> para o <strong>Parque Estadual da Serra do Rola-Moça</strong>.</p>
+<h2 id="%F0%9F%8E%AF-objetivos-do-projeto">🎯 Objetivos do Projeto</h2>
+<ul>
+<li>🔍 Identificar áreas de risco de incêndio</li>
+<li>🏞️ Definir locais para postos de observação e estações de bombeamento de água</li>
+<li>🌆 Avaliar a relação entre o parque, áreas urbanizadas e recursos naturais</li>
+</ul>
+<h2 id="%F0%9F%9B%A0%EF%B8%8F-metodologia">🛠️ Metodologia</h2>
+<ul>
+<li>🗺️ Utilizar camadas geográficas no QGIS</li>
+<li>📊 Analisar os dados: rios, estradas, áreas urbanas, vento, relevo, vegetação</li>
+<li>🤝 Propor soluções de forma colaborativa</li>
+</ul>
+<h2 id="%E2%9C%85-resultados-esperados">✅ Resultados Esperados</h2>
+<ul>
+<li>📝 Camadas editadas</li>
+<li>➕ Novas camadas</li>
+<li>🗺️ Mapa com o plano de ação</li>
+<li>📄 Documento Word com respostas às perguntas</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%A7%AA-atividade-1-10-pontos">🧪 Atividade 1 (10 pontos)</h2>
+<h3 id="%F0%9F%8F%98%EF%B8%8F-vetorizar-regi%C3%B5es-pr%C3%B3ximas-ao-parque">🏘️ Vetorizar regiões próximas ao parque</h3>
+<ul>
+<li>Editar a camada de pontos <code>comunidades_proximas</code></li>
+<li>Adicionar no mínimo 5 bairros/distritos próximos ao parque Rola Moça</li>
+<li>Adicionar no mínimo 1 coluna com o nome dos bairros (usar mapas de referência, consultar no Google)</li>
+</ul>
+<h2 id="%F0%9F%92%A7-atividade-2-10-pontos">💧 Atividade 2 (10 pontos)</h2>
+<h3 id="%F0%9F%9A%B0-vetorizar-pontos-de-capta%C3%A7%C3%A3obombeamento-de-%C3%A1gua">🚰 Vetorizar pontos de captação/bombeamento de água</h3>
+<ul>
+<li>Editar a camada de pontos <code>pontos_captacao</code></li>
+<li>Adicionar no mínimo 3 pontos de captação/bombeamento de água</li>
+<li>Adicionar no mínimo 2 colunas: nome e disponibilidade em litros de água</li>
+</ul>
+<h4 id="%F0%9F%93%8C-condi%C3%A7%C3%B5es-gerais">📌 Condições Gerais</h4>
+<ul>
+<li>Os pontos devem estar <strong>dentro do limite do parque</strong></li>
+<li>Distância mínima entre pontos: <strong>2500m</strong></li>
+<li>Devem estar sobre a <strong>hidrografia</strong></li>
+<li>Distância máxima de <strong>300m</strong> de uma via de acesso (camada <code>malha viária</code>)</li>
+<li>Devem estar em hidrografia de ordem superior a 2 (<code>nustrahler</code>)</li>
+</ul>
+<h2 id="%F0%9F%97%BC-atividade-3-10-pontos">🗼 Atividade 3 (10 pontos)</h2>
+<h3 id="%F0%9F%94%AD-vetorizar-torres-de-observa%C3%A7%C3%A3o">🔭 Vetorizar torres de observação</h3>
+<ul>
+<li>Editar a camada de pontos <code>torres_observacao</code></li>
+<li>Adicionar no mínimo 3 torres</li>
+<li>Adicionar no mínimo 2 colunas: nome e altura da torre</li>
+</ul>
+<h4 id="%F0%9F%93%8C-condi%C3%A7%C3%B5es-gerais">📌 Condições Gerais</h4>
+<ul>
+<li>Devem estar <strong>dentro do limite do parque</strong></li>
+<li>Distância mínima entre torres: <strong>1000m</strong></li>
+<li>Altitude superior a <strong>1200m</strong></li>
+<li>Distância máxima de <strong>100m</strong> de uma via de acesso</li>
+</ul>
+<h2 id="%F0%9F%A7%AD-atividade-4-10-pontos">🧭 Atividade 4 (10 pontos)</h2>
+<h3 id="%F0%9F%93%8F-gerar-buffer-de-visibilidade">📏 Gerar buffer de visibilidade</h3>
+<ul>
+<li>Criar a camada <code>visibilidade_torres</code></li>
+<li>Visibilidade de cada torre: <strong>1km (1000 metros)</strong></li>
+</ul>
+<h2 id="%F0%9F%8C%AC%EF%B8%8F-atividade-5-10-pontos">🌬️ Atividade 5 (10 pontos)</h2>
+<h3 id="%F0%9F%8C%A1%EF%B8%8F-identificar-vento-predominante-e-bairros-de-risco">🌡️ Identificar vento predominante e bairros de risco</h3>
+<ul>
+<li>Considerar <strong>agosto</strong> como mês com ventos predominantes</li>
+<li>Identificar bairros com maior risco considerando vegetação natural (camada <code>uso_natural_nao_antropico</code>) e proximidade ao parque (<code>comunidades_proximas</code>)</li>
+</ul>
+<h2 id="%F0%9F%97%BA%EF%B8%8F-atividade-6-20-pontos">🗺️ Atividade 6 (20 pontos)</h2>
+<h3 id="%F0%9F%96%BC%EF%B8%8F-elaborar-mapa-layout-final-do-projeto">🖼️ Elaborar mapa (layout final do projeto)</h3>
+<p>Criar um layout de impressão no QGIS nomeado <strong>Plano de Prevenção de Incêndios</strong>.</p>
+<h4 id="%F0%9F%A7%BE-o-layout-deve-conter">🧾 O layout deve conter:</h4>
+<ul>
+<li><strong>Título do mapa:</strong> Plano de Prevenção e Combate a Incêndios Florestais – Parque Estadual da Serra do Rola-Moça</li>
+<li><strong>Camadas utilizadas:</strong> parque, áreas urbanizadas, malha viária, hidrografia, torres de observação, pontos de captação de água, comunidades_proximas, buffers de visibilidade, direção dos ventos, elevação, hillshade</li>
+<li><strong>Rótulos:</strong> comunidades_proximas, torres de observação, pontos de captação de água, direção dos ventos</li>
+<li><strong>Legenda clara e organizada</strong></li>
+<li><strong>Elementos cartográficos obrigatórios:</strong>
+<ul>
+<li>📐 Barra de escala</li>
+<li>🧭 Indicação de norte</li>
+<li>🗃️ Grid</li>
+<li>📝 Fonte dos dados (ex: &quot;Fonte: IDE-Sisema&quot;)</li>
+<li>👥 Autoria do mapa (nomes dos alunos)</li>
+<li>🗓️ Data de elaboração</li>
+</ul>
+</li>
+</ul>
+<h4 id="%F0%9F%A7%AD-o-mapa-deve-representar">🧭 O mapa deve representar:</h4>
+<ul>
+<li>Localização dos <strong>pontos de captação de água</strong></li>
+<li>Localização das <strong>torres de observação</strong></li>
+<li>Identificação dos <strong>bairros em risco</strong></li>
+<li><strong>Buffers de visibilidade</strong> das torres</li>
+<li><strong>Direção predominante dos ventos</strong></li>
+<li><strong>Elevação da região</strong></li>
+</ul>
+<hr>
+<h2 id="%F0%9F%97%BA%EF%B8%8F-atividade-7-10-pontos">🗺️ Atividade 7 (10 pontos)</h2>
+<h3 id="%F0%9F%96%BC%EF%B8%8F-elaborar-relat%C3%B3rio-com-justificativas-de-escolha">🖼️ Elaborar relatório com justificativas de escolha</h3>
+<h4 id="%F0%9F%A7%BE-o-relat%C3%B3rio-deve-conter">🧾 O relatório deve conter:</h4>
+<ul>
+<li>Texto (5–10 linhas) justificando as escolhas feitas</li>
+</ul>
+<h2 id="%F0%9F%A7%A9-desafio-final-extra---20-pontos">🧩 Desafio Final (Extra) - (20 pontos)</h2>
+<h3 id="%F0%9F%8C%90-publica%C3%A7%C3%A3o-din%C3%A2mica-por-meio-do-plugin-qgis2web">🌐 Publicação Dinâmica por meio do Plugin qgis2web</h3>
+<p>Como etapa complementar e opcional, desafia-se a equipe a transformar o mapa estático em uma <strong>visualização interativa</strong> utilizando o plugin <a href="https://plugins.qgis.org/plugins/qgis2web/">qgis2web</a>:</p>
+<ul>
+<li>
+<p>🗺️ <strong>Objetivo:</strong> Publicar o plano de prevenção e combate a incêndios em formato dinâmico, acessível via web.</p>
+</li>
+<li>
+<p>🔧 <strong>Como fazer:</strong></p>
+<ul>
+<li>Instalar o complemento (plugin) [qgis2web]</li>
+<li>Clicar no ícone do [qgis2web] para exportar o projeto do QGIS para web</li>
+<li>Configurar as camadas a serem apresentadas na aba [Layers and Groups]</li>
+<li>Alterar propriedades na aba Appearance.
+<ul>
+<li><em>ATENÇÃO: configurar Layers list para Collapsed</em></li>
+<li><em>ATENÇÃO: ativar Geolocate user</em></li>
+<li><em>ATENÇÃO: colocar Metric na Measure tool</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>🏆 <strong>Benefício:</strong> Aprimorar a comunicação dos resultados e explorar o potencial de plataformas WebGIS para projetos reais</p>
+</li>
+</ul>
+<hr>
+<h2 id="%F0%9F%93%A6-entrega-final">📦 Entrega Final</h2>
+<ul>
+<li><strong>Arquivos editaveis</strong> Arquivos utilizados para gerar os produtos (pasta zipada com todo conteúdo)</li>
+<li><strong>Apresentação:</strong> Apresentação para os colegas os resultados obtidos</li>
+<li><strong>Mapa:</strong> 1 layout em A4 impresso/exportado em PDF ou imagem</li>
+<li><strong>Relatório:</strong> Texto (5–10 linhas) justificando as escolhas feitas</li>
+</ul>
+
+</body>
+</html>
